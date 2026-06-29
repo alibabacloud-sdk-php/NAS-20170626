@@ -34,7 +34,17 @@ class accessPoint extends Model
     /**
      * @var string
      */
+    public $agenticSpaceId;
+
+    /**
+     * @var string
+     */
     public $createTime;
+
+    /**
+     * @var string
+     */
+    public $createTimeUtc;
 
     /**
      * @var string
@@ -55,6 +65,11 @@ class accessPoint extends Model
      * @var string
      */
     public $modifyTime;
+
+    /**
+     * @var string
+     */
+    public $modifyTimeUtc;
 
     /**
      * @var posixUser
@@ -105,11 +120,14 @@ class accessPoint extends Model
         'accessGroup' => 'AccessGroup',
         'accessPointId' => 'AccessPointId',
         'accessPointName' => 'AccessPointName',
+        'agenticSpaceId' => 'AgenticSpaceId',
         'createTime' => 'CreateTime',
+        'createTimeUtc' => 'CreateTimeUtc',
         'domainName' => 'DomainName',
         'enabledRam' => 'EnabledRam',
         'fileSystemId' => 'FileSystemId',
         'modifyTime' => 'ModifyTime',
+        'modifyTimeUtc' => 'ModifyTimeUtc',
         'posixUser' => 'PosixUser',
         'regionId' => 'RegionId',
         'rootPath' => 'RootPath',
@@ -154,8 +172,16 @@ class accessPoint extends Model
             $res['AccessPointName'] = $this->accessPointName;
         }
 
+        if (null !== $this->agenticSpaceId) {
+            $res['AgenticSpaceId'] = $this->agenticSpaceId;
+        }
+
         if (null !== $this->createTime) {
             $res['CreateTime'] = $this->createTime;
+        }
+
+        if (null !== $this->createTimeUtc) {
+            $res['CreateTimeUtc'] = $this->createTimeUtc;
         }
 
         if (null !== $this->domainName) {
@@ -172,6 +198,10 @@ class accessPoint extends Model
 
         if (null !== $this->modifyTime) {
             $res['ModifyTime'] = $this->modifyTime;
+        }
+
+        if (null !== $this->modifyTimeUtc) {
+            $res['ModifyTimeUtc'] = $this->modifyTimeUtc;
         }
 
         if (null !== $this->posixUser) {
@@ -244,8 +274,16 @@ class accessPoint extends Model
             $model->accessPointName = $map['AccessPointName'];
         }
 
+        if (isset($map['AgenticSpaceId'])) {
+            $model->agenticSpaceId = $map['AgenticSpaceId'];
+        }
+
         if (isset($map['CreateTime'])) {
             $model->createTime = $map['CreateTime'];
+        }
+
+        if (isset($map['CreateTimeUtc'])) {
+            $model->createTimeUtc = $map['CreateTimeUtc'];
         }
 
         if (isset($map['DomainName'])) {
@@ -262,6 +300,10 @@ class accessPoint extends Model
 
         if (isset($map['ModifyTime'])) {
             $model->modifyTime = $map['ModifyTime'];
+        }
+
+        if (isset($map['ModifyTimeUtc'])) {
+            $model->modifyTimeUtc = $map['ModifyTimeUtc'];
         }
 
         if (isset($map['PosixUser'])) {
